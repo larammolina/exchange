@@ -6,15 +6,17 @@ const CurrencyOptions = (props) => {
     useEffect(() => {
         fetch(`https://api.vatcomply.com/currencies`)
         .then((response) => response.json())
-        .then((json) => setDataMonedas(Object.entries(json)))
+        .then((json) => setDataMonedas(Object.values(json)))
         .catch((error) => console.error(error))
     }, [])
+
+
     return (
         <>
-        <label for="moneda"></label>
-        <select name={props.name} value={props.value} onChange={(e)=> props.handleCurrency(e.target.value)}>
-            {dataMonedas.map( ([itemId, {name, symbol}]) => (
-                <option key={itemId} value={itemId} >{symbol} - {name}</option>
+        <label htmlFor='moneda'></label>
+        <select name={props.option} onChange={(e)=> props.handleCurrency(e.target.value)}>
+            {dataMonedas.map(({name, symbol}) => (
+                <option value={symbol} >{symbol} - {name}</option>
             ))}    
         </select>
         </>

@@ -16,9 +16,9 @@ const ShowResults = (props) => {
         // const res2 = await response2.json();
         // setResult3(res2.rates[currencyFrom].toFixed(4));
         // setDate(res2.date);
-    } else {
+        } else {
         alert('Please enter positive numbers only')
-    }
+        }
     }, [props.amount]);
 
     return (

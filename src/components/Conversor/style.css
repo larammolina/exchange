@@ -97,12 +97,14 @@
         border: #00AEEF solid 1px;
         display: flex;
         justify-content: center;
+        cursor: pointer;
     
     }
 
     .circulo img {
         width: 13px;
         height: 13px;
+        cursor: pointer;
     }
 
     .result{
@@ -111,6 +113,10 @@
 
     .soloDesktop {
         display: none;
+    }
+
+    .pt-2{
+        padding-top: 20px;
     }
 
 
