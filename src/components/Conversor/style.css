@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Work+Sans:wght@700&display=swap');
+
+    *{
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    .positionPadre{
+        position: relative;
+    }
+
+    button{
+    border: none;
+    background: none;
+    }
+
+    .background{
+        height: 300px;
+        z-index: -1;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        top:0;
+        background-image: url('../../../public/images/mobile-background-img.svg') ;
+    }
+
+    .bold{
+        font-weight: 600;
+        font-size: 20px;
+        color:#323232 ;
+    }
+
+    .card {
+        width: 90%;
+        color: white;
+        margin-bottom: 50px;
+        font-size: medium;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 50px;
+
+    
+    }
+
+    .card h2{
+        margin: auto;
+        text-align: center;
+        font-size: 24px;
+
+    }
+
+    .card-central{
+        display: flex;
+        flex-direction: column;
+
+        border: #E7EAF3 1px solid;
+        /*border-radius: 15px;*/
+        width: 85%;
+        /*margin: 10px;*/
+        margin: auto;
+        margin-top: 10px;
+        height: 500px;
+        background-color: white;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        top: 150px;
+        text-align: left;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-shadow: 0px 0px 12px rgba(140, 152, 164, 0.08);
+        border-radius: 8px;
+        
+    }
+
+    .card-central p{
+        font-size: 14px;
+    
+    }
+
+    select, input {
+        border: 1px #E0E0E0 solid;
+        border-radius: 4px;
+        width: 326px;
+        height: 40px;
+        
+    }
+
+    .circulo {
+        margin: 30px;
+        margin-left: 0px;
+        border-radius: 100%;
+        width: 15px;
+        height: 15px;
+        padding: 5px;
+        border: #00AEEF solid 1px;
+        display: flex;
+        justify-content: center;
+    
+    }
+
+    .circulo img {
+        width: 13px;
+        height: 13px;
+    }
+
+    .result{
+        color: #757575;
+    }
+
+    .soloDesktop {
+        display: none;
+    }
+
+
+
+
+@media (min-width: 1000px) {
+
+    
+    .background{
+        height: 480px;
+        width: auto;
+        z-index: -1;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        top:0;
+        background: url('../../../public/images/desktop-background-img.svg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+
+    .circulo{
+        margin: auto;
+        margin-left: 20px;
+    }
+
+    .card-central{
+        padding: 113px;
+        width: 80%;
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+     
+    }
+
+    .card-central p {
+        font-size: 14px;
+    }
+
+    .card h2 {
+        font-size: 34px;
+        font-family: 'Work Sans', sans-serif;
+    }
+
+    
+    .result{
+       margin-left: 150px;
+       
+    }
+
+    .result p {
+
+        font-size: 30px;
+        font-weight: 600;
+        color: #757575;
+    }
+
+    .result .bold {
+        font-size: 40px;
+    }
+
+    .result .subP {
+        margin-top: 50px;
+    }
+
+    .result .subP p {
+        font-size: 20px;
+        
+    }
+
+    .soloDesktop {
+        display: inline;
+        position: absolute;
+        width: 415px;
+        height: 18px;
+        left: 42px;
+        top: 796px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #757575;
+    }
+
+}
+
+
