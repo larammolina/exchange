@@ -8,9 +8,10 @@ Se requiere realizar una calculadora entre monedas.
 La api a utilizar es https://www.vatcomply.com/documentation
 
 Diseño: https://www.figma.com/file/Aj8KW3UGBC461ropq3nlRr/Test-exchange?node-id=0%3A1
-Requerimiento
 
-  NodeJS 
+Requerimiento 🔧
+
+    NodeJS 
 
 Instalación 🔧
 
