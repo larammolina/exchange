@@ -12,7 +12,7 @@ const CurrencyOptions = (props) => {
     return (
         <>
         <label for="moneda"></label>
-        <select name={props.name} value={props.value} onChange={()=> props.handleCurrency('currency')}>
+        <select name={props.name} value={props.value} onChange={(e)=> props.handleCurrency(e.target.value)}>
             {dataMonedas.map( ([itemId, {name, symbol}]) => (
                 <option key={itemId} value={itemId} >{symbol} - {name}</option>
             ))}    
