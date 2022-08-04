@@ -8,13 +8,13 @@ export const useFecth = (url) => {
         const abortController = new AbortController();
         const signal = abortController.signal;
 
-        const fetchData = async () => {
+        const fetchData = async (props) => {
             try{
-                const response = await fetch(url)
+                const response = await fetch(props.url)
                 const json = await response.json()
 
                 setData(json);
-                
+
             } catch (error) {
 
             }

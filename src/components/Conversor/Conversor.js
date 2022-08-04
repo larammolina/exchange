@@ -27,7 +27,7 @@ const Conversor = () => {
                     <input type="number" min='1' onChange={(e) => setAmount(e.target.value)}/> 
                     <p>From:</p>
                     <CurrencyOptions handleCurrency={currencyFrom => setCurrencyFrom(currencyFrom)} />
-                    <ButtonSwitch switchCurrency={currencyTo => setCurrencyFrom(currencyTo)}/>
+                    <ButtonSwitch currencyTo={currencyTo} switchCurrency={currencyTo => setCurrencyFrom(currencyTo)}/>
                     <p>To:</p>
                     <CurrencyOptions handleCurrency={currencyTo => setCurrencyTo(currencyTo)} />
                 </div>

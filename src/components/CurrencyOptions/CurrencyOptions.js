@@ -14,7 +14,7 @@ const CurrencyOptions = (props) => {
     return (
         <>
         <label htmlFor='moneda'></label>
-        <select name={props.option} onChange={(e)=> props.handleCurrency(e.target.value)}>
+        <select name={'moneda'} onChange={(e)=> props.handleCurrency(e.target.value)}>
             {dataMonedas.map(({name, symbol}) => (
                 <option value={symbol} >{symbol} - {name}</option>
             ))}    
