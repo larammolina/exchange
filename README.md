@@ -12,24 +12,31 @@ Diseño: https://www.figma.com/file/Aj8KW3UGBC461ropq3nlRr/Test-exchange?node-id
 Requerimiento 🔧
 
     NodeJS 
+    Axios
 
 Instalación 🔧
 
 1- Para ello debes clonar el repositorio, ingresando a una terminal y ejecutando:
 
-git clone `https://github.com/larammolina/exchange.git`
+    git clone `https://github.com/larammolina/exchange.git`
 
 2 - En la carpeta donde se encuentra "package.json" ejecutar en la terminal:
 
-npm install
+    npm install
 
-3- Una vez finalizado, para abrir el proyecto ejecutar:
 
-npm start
+4 - (instalar axios)En la carpeta donde se encuentra "package.json" ejecutar en la terminal:
+
+    npm install axios
+
+5- Una vez finalizado, para abrir el proyecto ejecutar:
+
+    npm start
 
 Dependencias utilizadas
 
     NPM
+    AXIOS
 
 Media Queries/Responsive:
 
