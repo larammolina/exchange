@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+ import { useState, useEffect } from "react";
 
 const CurrencyOptions = (props) => {
     const [dataMonedas, setDataMonedas] = useState([]);
-    //consulto las monedas disponibles
+    
     useEffect(() => {
         fetch(`https://api.vatcomply.com/currencies`)
         .then((response) => response.json())
