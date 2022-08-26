@@ -22,7 +22,7 @@ const Conversor = () => {
     const [currencyTo, setCurrencyTo] = useState(initialCurrencyTo);
     const [currencyFromName, setCurrencyFromName] = useState(initialCurrencyFromName);
     const [currencyToName, setCurrencyToName] = useState(initialCurrencyToName);
-    // const [dataMonedas, setDataMonedas] = useState();
+    const [dataMonedas, setDataMonedas] = useState([]);
 
     const handleChange = (e) => {
         if(e.target.value < 0 ) {
@@ -31,6 +31,11 @@ const Conversor = () => {
             setAmount(e.target.value);
         }
     }
+
+    useEffect(() => {
+        getCurrencies().then((res) => setDataMonedas(Object.values(res)))
+        
+    }, [])
     
     return (
         <div className='positionPadre'>
@@ -42,10 +47,10 @@ const Conversor = () => {
                     <p>Amount</p>
                     <input type="number" min='1' onChange={handleChange} value={amount} /> 
                     <p>From:</p>
-                    <CurrencyOptions handleCurrency={currencyFrom => setCurrencyFrom(currencyFrom)} />
+                    <CurrencyOptions dataMonedas={dataMonedas} handleCurrency={currencyFrom => setCurrencyFrom(currencyFrom)} />
                     <ButtonSwitch currencyTo={currencyTo} switchCurrency={currencyTo => setCurrencyFrom(currencyTo)}/>
                     <p>To:</p>
-                    <CurrencyOptions handleCurrency={currencyTo => setCurrencyTo(currencyTo)} />
+                    <CurrencyOptions dataMonedas={dataMonedas} handleCurrency={currencyTo => setCurrencyTo(currencyTo)} />
                 </div>
                 <ShowResults amount={amount} currencyFrom={currencyFrom} currencyTo={currencyTo} />
             </div>

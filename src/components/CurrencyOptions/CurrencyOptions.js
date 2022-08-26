@@ -2,22 +2,20 @@
  import { getCurrencies } from "../../services/getCurrencies";
 
 const CurrencyOptions = (props) => {
-    const [dataMonedas, setDataMonedas] = useState([]);
     
-    useEffect(() => {
+    // useEffect(() => {
+    //     getCurrencies().then((res) => setDataMonedas(Object.values(res)))
         
-        getCurrencies()
-        // .then((response) => response.data())
-        // setDataMonedas(Object.values(data)))
-        
-    }, [])
+    // }, [])
+
+    const monedas = props.dataMonedas;
 
     return (
         <>
         <label htmlFor='moneda'></label>
         <select name={'moneda'} onChange={(e)=> props.handleCurrency(e.target.value)}>
-            {dataMonedas.map(({name, symbol}) => (
-                <option value={symbol} >{symbol} - {name}</option>
+            {monedas.map(({name, symbol}) => (
+                <option key={symbol} value={symbol} >{symbol} - {name}</option>
             ))}    
         </select>
         </>
