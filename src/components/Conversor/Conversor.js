@@ -9,19 +9,16 @@ import ButtonSwitch from '../ButtonSwitch/ButtonSwitch';
 import {getCurrencies} from '../../services/getCurrencies';
 
 
+
 const Conversor = () => {
 
     const initialAmount = 1;
     const initialCurrencyFrom = 'USD';
     const initialCurrencyTo = 'EUR';
-    const initialCurrencyFromName = 'US Dollar';
-    const initialCurrencyToName = 'Euro';
 
     const [amount, setAmount] = useState(initialAmount);
     const [currencyFrom, setCurrencyFrom] = useState(initialCurrencyFrom);
     const [currencyTo, setCurrencyTo] = useState(initialCurrencyTo);
-    const [currencyFromName, setCurrencyFromName] = useState(initialCurrencyFromName);
-    const [currencyToName, setCurrencyToName] = useState(initialCurrencyToName);
     const [dataMonedas, setDataMonedas] = useState([]);
 
     const handleChange = (e) => {
@@ -33,29 +30,28 @@ const Conversor = () => {
     }
 
     useEffect(() => {
-        getCurrencies().then((res) => setDataMonedas(Object.values(res)))
-        
+        getCurrencies().then((res) => setDataMonedas(Object.entries(res)))    
     }, [])
     
     return (
         <div className='positionPadre'>
             <div className='background'>
-                <Title amount={amount} currencyFrom={currencyFrom} currencyFromName={currencyFromName} currencyTo={currencyTo} currencyToName={currencyToName}/>
+                <Title amount={amount} currencyFrom={currencyFrom} currencyTo={currencyTo} />
             </div>      
             <div className='card-central'>
                 <div>
                     <p>Amount</p>
                     <input type="number" min='1' onChange={handleChange} value={amount} /> 
                     <p>From:</p>
-                    <CurrencyOptions dataMonedas={dataMonedas} handleCurrency={currencyFrom => setCurrencyFrom(currencyFrom)} />
-                    <ButtonSwitch currencyTo={currencyTo} switchCurrency={currencyTo => setCurrencyFrom(currencyTo)}/>
+                    <CurrencyOptions dataMonedas={dataMonedas} handleCurrency={currencyFrom => setCurrencyFrom(currencyFrom.split("-")[0].trim())} />
+                    <ButtonSwitch currencyTo={currencyTo.split("-")[0].trim()} switchCurrency={currencyTo => setCurrencyFrom(currencyTo.split("-")[0].trim())}/>
                     <p>To:</p>
-                    <CurrencyOptions dataMonedas={dataMonedas} handleCurrency={currencyTo => setCurrencyTo(currencyTo)} />
+                    <CurrencyOptions dataMonedas={dataMonedas} handleCurrency={currencyTo => setCurrencyTo(currencyTo.split("-")[0].trim())} />
                 </div>
                 <ShowResults amount={amount} currencyFrom={currencyFrom} currencyTo={currencyTo} />
             </div>
             <Warning />
-            <LastUpdate currencyFrom={currencyFrom} currencyTo={currencyTo}/>
+            <LastUpdate currencyFromName={currencyFrom} currencyToName={currencyTo}/>
         </div>
     )
 }

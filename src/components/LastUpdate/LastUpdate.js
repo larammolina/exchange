@@ -1,6 +1,6 @@
 const LastUpdate = (props) => {
     return (
-        <p className='soloDesktop'>Conversion from {props.currencyFrom} to {props.currencyTo} - Last updated: </p>
+        <p className='soloDesktop'>Conversion from {props.currencyFromName} to {props.currencyToName} - Last updated: </p>
     )           
 }
 export default LastUpdate;
