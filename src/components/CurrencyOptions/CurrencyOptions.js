@@ -5,11 +5,11 @@ const CurrencyOptions = (props) => {
     const [dataMonedas, setDataMonedas] = useState([]);
     
     useEffect(() => {
-        getCurrencies()
         
+        getCurrencies()
         // .then((response) => response.data())
-        // .then((json) => setDataMonedas(Object.values(json)))
-        // .catch((error) => console.error(error))
+        // setDataMonedas(Object.values(data)))
+        
     }, [])
 
     return (
