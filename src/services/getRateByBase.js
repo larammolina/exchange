@@ -1,11 +1,12 @@
-import { api } from "../constantes/api" 
+import { baseURL } from "../constantes/api" 
 import axios from 'axios';
 import { response } from "express";
 
-export const getRateByBase = (symbol) => {
-
-    const response = axios.get(api + `rates?base=${symbol}`)
-    .then((response) => response.json());
-
-    return response;
+export const getRateByBase = async(symbol) => {
+    try {
+        const respuesta = await axios.get(baseURL + `rates?base=`${symbol})
+        return respuesta
+    } catch (error) {
+        return error
+    }
 } 

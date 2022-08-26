@@ -153,7 +153,7 @@
 
     .card-central{
         padding: 113px;
-        width: 80%;
+        width: 70%;
         height: 400px;
         display: flex;
         flex-direction: row;
@@ -199,7 +199,7 @@
     .soloDesktop {
         display: inline;
         position: absolute;
-        width: 415px;
+        width: 400px;
         height: 18px;
         left: 42px;
         top: 796px;

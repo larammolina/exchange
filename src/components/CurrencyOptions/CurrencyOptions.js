@@ -1,15 +1,16 @@
  import { useState, useEffect } from "react";
+ import { getCurrencies } from "../../services/getCurrencies";
 
 const CurrencyOptions = (props) => {
     const [dataMonedas, setDataMonedas] = useState([]);
     
     useEffect(() => {
-        fetch(`https://api.vatcomply.com/currencies`)
-        .then((response) => response.json())
-        .then((json) => setDataMonedas(Object.values(json)))
-        .catch((error) => console.error(error))
+        getCurrencies()
+        
+        // .then((response) => response.data())
+        // .then((json) => setDataMonedas(Object.values(json)))
+        // .catch((error) => console.error(error))
     }, [])
-
 
     return (
         <>

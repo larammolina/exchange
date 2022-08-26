@@ -1,9 +1,12 @@
-import { api } from "../constantes/api";
+import { baseURL } from "../constantes/baseURL";
+import axios from 'axios';
 
 export const getCurrencies = async () => {
-    
-    const response = await api.get('/').then(res => res.json()).catch(console.log)
-
-    return response
-      
+    try {
+        const respuesta = await axios.get(baseURL+'currencies')
+        return respuesta
+    } catch (error) {
+        return error
+    }
+        
 } 

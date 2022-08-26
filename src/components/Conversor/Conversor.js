@@ -22,7 +22,7 @@ const Conversor = () => {
     const [currencyTo, setCurrencyTo] = useState(initialCurrencyTo);
     const [currencyFromName, setCurrencyFromName] = useState(initialCurrencyFromName);
     const [currencyToName, setCurrencyToName] = useState(initialCurrencyToName);
-    const [dataMonedas, setDataMonedas] = useState();
+    // const [dataMonedas, setDataMonedas] = useState();
 
     const handleChange = (e) => {
         if(e.target.value < 0 ) {
@@ -45,7 +45,7 @@ const Conversor = () => {
                     <CurrencyOptions handleCurrency={currencyFrom => setCurrencyFrom(currencyFrom)} />
                     <ButtonSwitch currencyTo={currencyTo} switchCurrency={currencyTo => setCurrencyFrom(currencyTo)}/>
                     <p>To:</p>
-                    <CurrencyOptions dataMonedas={dataMonedas} handleCurrency={currencyTo => setCurrencyTo(currencyTo)} />
+                    <CurrencyOptions handleCurrency={currencyTo => setCurrencyTo(currencyTo)} />
                 </div>
                 <ShowResults amount={amount} currencyFrom={currencyFrom} currencyTo={currencyTo} />
             </div>
