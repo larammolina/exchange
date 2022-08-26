@@ -51,4 +51,11 @@ npm start
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in your browser.
 
+Bugs de la Version.
+
+  * El default del select "From" no esta en Dollar.
+  * El resultado de la conversion se carga lentamente.
+  * El input permite ingresar '-0' pero la conversion no se realiza con dicho valor.
+  * No se actualiza el nombre de la moneda en los titulos y resultado, solo se informa el symbol.
+  * El diseño del campo imput desborda de los bordes de la card en mobile.
 
